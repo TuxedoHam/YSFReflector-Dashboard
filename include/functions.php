@@ -150,7 +150,7 @@ function getLinkedGateways($logLines) {
 
 	$gateways = Array();
 	for ($i = count($logLines); $i>0; $i--) {
-		$logLine = $logLines[$i];
+		$logLine = $logLines[$i-1];
 		
 		if (strpos($logLine, "Starting YSFReflector")) {
 			return $gateways;
@@ -160,7 +160,7 @@ function getLinkedGateways($logLines) {
 		}
 		if (strpos($logLine, "Currently linked repeaters/gateways")) {
 			for ($j = $i+1; $j <= count($logLines); $j++) {
-				$logLine = $logLines[$j];
+				$logLine = $logLines[$j-1];
 				if (!startsWith(substr($logLine,27), "   ")) {
 					return $gateways;
 				} else {
