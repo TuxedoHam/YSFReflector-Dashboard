@@ -59,7 +59,7 @@ include "version.php";
       checkSetup();
     ?>
     <div class="row">
-      <div class="col-10">
+      <div class="col-9">
         <?php
           include "include/txinfo.php";
         ?>
